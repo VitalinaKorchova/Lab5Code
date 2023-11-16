@@ -1,0 +1,31 @@
+Ex3
+import random
+
+N = 12
+myArray = [''] * N
+
+print("Massive: ")
+for i in range(N):
+    randomnumb = random.randint(0, 3)
+    myArray[i] = format(randomnumb, '04b')
+    print(myArray[i])
+
+sequenceStartIndex = -1
+sequenceLength = 0
+
+for i in range(len(myArray)):
+    if i < len(myArray) - 1 and myArray[i] == myArray[i + 1]:
+        if sequenceStartIndex == -1:
+            sequenceStartIndex = i
+        sequenceLength += 1
+    else:
+        if sequenceLength >= 2:
+            for j in range(sequenceStartIndex, i + 1):
+                myArray[j] = None
+        sequenceStartIndex = -1
+        sequenceLength = 0
+
+print("New Massive: ")
+for i in range(len(myArray)):
+    if myArray[i] is not None:
+        print(myArray[i])

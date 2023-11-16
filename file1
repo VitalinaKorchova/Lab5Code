@@ -79,3 +79,33 @@ class Program
         Console.WriteLine();
     }
 }
+using System;
+
+public class Program
+{
+    public static void Dovzhini_visot(double a, double b, double c)
+    {
+        double p = (a + b + c) / 2;
+        double h1 = (2 / a) * (Math.Sqrt(p * (p - a) * (p - b) * (p - c)));
+        double h2 = (2 / b) * (Math.Sqrt(p * (p - a) * (p - b) * (p - c)));
+        double h3 = (2 / c) * (Math.Sqrt(p * (p - a) * (p - b) * (p - c)));
+
+        Console.WriteLine($"h1 = {h1}");
+        Console.WriteLine($"h2 = {h2}");
+        Console.WriteLine($"h3 = {h3}");
+    }
+    public static void Main()
+    {
+        Console.WriteLine("Enter AB:");
+        double AB = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter BC:");
+        double BC = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter CA:");
+        double CA = double.Parse(Console.ReadLine());
+
+        Dovzhini_visot(AB, BC, CA);
+    }
+
+}

@@ -1,0 +1,81 @@
+Ex 1
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+       int  count = 0;
+        int[] myArray = new int[20];
+        Random rand = new Random();
+
+        for (int x = 0; x < myArray.Length; x++)
+        {
+            myArray[x] = rand.Next(-50,49);
+            Console.Write("  " + myArray[x] );
+        }
+
+        Console.WriteLine(' ');
+        Console.WriteLine("New massive:");
+
+        for (int i=0; i < myArray.Length; i++)
+        {
+            if(myArray[i]%3==0)
+            {
+                myArray[i] = 0;
+                count++;
+            }
+    
+            Console.Write( myArray[i]+"\n");
+            
+
+
+
+        }
+       
+        Console.WriteLine("Kilkist zamin: " + count);
+    }
+}
+
+
+Ex2
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] myArray1 = new int[20];
+        int[] myArray2 = new int[20];
+        Random rand = new Random();
+
+        Console.Write("Massive 1: ");
+        for (int i = 0; i < myArray1.Length; i++)
+        {
+            myArray1[i] = rand.Next(-19, 21);
+            Console.Write("  " + myArray1[i]);
+        }
+
+        Console.WriteLine();
+        Console.Write("Massive 2: ");
+        for (int i = 0; i < myArray2.Length; i++)
+        {
+            myArray2[i] = rand.Next(-19, 21);
+            Console.Write("  " + myArray2[i]);
+        }
+
+        Console.WriteLine("\nNew massive:");
+        for (int i = 0; i < myArray1.Length; i++)
+        {
+            for (int j = 0; j < myArray2.Length; j++)
+            {
+                if (myArray1[i] == myArray2[j])
+                {
+                    myArray1[i] = 0;
+                }
+            }
+            Console.Write("  " + myArray1[i]);
+        }
+        Console.WriteLine();
+    }
+}
